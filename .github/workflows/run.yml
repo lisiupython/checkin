@@ -16,7 +16,7 @@ jobs:
           node-version: 18
       - run: npm ci
       - run: npm run main
-         timeout-minutes: 5
+         timeout-minutes:10
         env:
           GLADOS: ${{ secrets.GLADOS }}
           NOTIFY: ${{ secrets.NOTIFY }}
