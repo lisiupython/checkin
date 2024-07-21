@@ -13,11 +13,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
         with:
-          python-version: '3.x'
+          python-version: '3.10'
       - run: python -m pip install --upgrade pip
       - run: pip install requests
       - run: python checkin.py
-         timeout-minutes:10
         env:
           GLADOS: ${{ secrets.GLADOS }}
           NOTIFY: ${{ secrets.NOTIFY }}
