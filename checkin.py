@@ -20,7 +20,7 @@ def glados():
         return [
             'Checkin OK',
             f"{checkin_response['message']}",
-            f"Left Days {int(status_response['data']['leftDays'])}",
+            f"Left Days {status_response['data']['leftDays']}",
         ]
     except Exception as error:
         return [
@@ -36,7 +36,7 @@ def notify(contents):
     requests.post('https://www.pushplus.plus/send', headers={'content-type': 'application/json'}, data=json.dumps({
         'token': token,
         'title': contents[0],
-        'content': '<br>'.join(contents),
+        'content': '<br>'.join(contents[1:]),
         'template': 'markdown',
     }))
 
